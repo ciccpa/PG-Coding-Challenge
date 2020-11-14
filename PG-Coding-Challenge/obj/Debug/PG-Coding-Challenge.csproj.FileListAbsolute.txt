@@ -1,0 +1,6 @@
+C:\Users\Joe\source\repos\PG-Coding-Challenge\PG-Coding-Challenge\bin\Debug\PG-Coding-Challenge.exe.config
+C:\Users\Joe\source\repos\PG-Coding-Challenge\PG-Coding-Challenge\bin\Debug\PG-Coding-Challenge.exe
+C:\Users\Joe\source\repos\PG-Coding-Challenge\PG-Coding-Challenge\bin\Debug\PG-Coding-Challenge.pdb
+C:\Users\Joe\source\repos\PG-Coding-Challenge\PG-Coding-Challenge\obj\Debug\PG-Coding-Challenge.csprojAssemblyReference.cache
+C:\Users\Joe\source\repos\PG-Coding-Challenge\PG-Coding-Challenge\obj\Debug\PG-Coding-Challenge.exe
+C:\Users\Joe\source\repos\PG-Coding-Challenge\PG-Coding-Challenge\obj\Debug\PG-Coding-Challenge.pdb
