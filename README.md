@@ -18,6 +18,9 @@ XML file with many predefined configuration sections available and support for c
 ### PG-Coding-Challenge/PG-Coding-Challenge/Properties/
 Contains Properties and resources that added to project. Contains AssemblyInfo.cs - information about project, including versioning information. 
 
+### PG-Coding-Challenge/PG-Coding-Challenge/PG-Test-Cases
+Unit Tests created for all Customer.cs functions. Ran using Test Explorer in Visual Studio 2019. Test -> Run All Tests.
+
 #### Can use Visual Studio or VSCode, anything that can run a C# Console Application. (.NET Framework)
         
 Decided to create a Customer class because this opens the door for reusable code
