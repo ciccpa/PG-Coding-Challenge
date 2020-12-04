@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PG-Coding-Challenge", "PG-Coding-Challenge\PG-Coding-Challenge.csproj", "{C9C0BDBD-67E5-43A3-A030-96971A859FB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PG-Test-Cases", "PG-Test-Cases\PG-Test-Cases.csproj", "{13E477ED-9F55-4A3F-ADE7-5280A38DD595}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C9C0BDBD-67E5-43A3-A030-96971A859FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9C0BDBD-67E5-43A3-A030-96971A859FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9C0BDBD-67E5-43A3-A030-96971A859FB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E477ED-9F55-4A3F-ADE7-5280A38DD595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E477ED-9F55-4A3F-ADE7-5280A38DD595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E477ED-9F55-4A3F-ADE7-5280A38DD595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E477ED-9F55-4A3F-ADE7-5280A38DD595}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

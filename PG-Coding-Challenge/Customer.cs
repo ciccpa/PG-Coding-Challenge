@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PG_Coding_Challenge
 {
     public class Customer
@@ -13,36 +14,61 @@ namespace PG_Coding_Challenge
         int m_Age;
         private string m_Gender;
         private string m_Condition;
+        private double cost;
+        private double covgAmount;
 
-        //****************************************************
-        // Method: Customer()
-        //
-        // Default constructor. Fills member variables with
-        //                               default data.
-        //****************************************************
         public Customer()
         {
             m_Name = "NO_NAME";
             m_Gender = "NO_GENDER";
             m_Condition = "NO_CONDITION";
             m_Age = 0;
+            cost = 100;
+            covgAmount = 500000.0;
         }
 
-        //****************************************************
-        // Method: toString()
-        //
-        // Purpose: Formats member variable data to be printed on screen.
-        //****************************************************
         public override string ToString()
         {
-            return m_Name + ", " + m_Age + ", " + m_Gender + ", " + m_Condition + "\r";
+            return $"-------------------\nName: {m_Name}\nAge: {m_Age}\nGender: {m_Gender}\nCondition: {m_Condition}\nCoverage amount: {covgAmount}\n-------------------";
         }
 
-        //****************************************************
-        // Method: CalculateEstimate()
-        //
-        // Calculates estimate based on the given criteria.
-        //****************************************************
+        public void CalculateAge()
+        {
+            int ageDiff = m_Age - 18;
+            int timesOver = ageDiff / 5;
+            cost += timesOver * 20;
+        }
+
+        public void CalculateCovg()
+        {
+            // covgdiff = 1250000 - 500000 = 750000
+            // covgIncrease = 750000 / 2500000 = 3 . 15
+            // coverage amount = 45%
+
+            double covgDiff = covgAmount - 500000; // 750000
+            double covgIncrease = covgDiff / 250000 * .15; // 3
+           // Console.WriteLine("Current cost: " + cost); // 220
+
+            cost += cost * covgIncrease; // 880
+        }
+
+        public void CalculateCondition()
+        {
+            m_Condition = m_Condition.ToUpper();
+            m_Gender = m_Gender.ToUpper();
+
+            var conditionDictionary = new Dictionary<string, double>()
+            {
+                {"ALLERGIES", 1.01 },
+                {"SLEEP APNEA", 1.06 },
+                { "HEART DISEASE", 1.17 }
+            };
+
+            double costIncrease = 0.0;
+            costIncrease = conditionDictionary[m_Condition];
+            cost = cost * costIncrease;
+        }
+
         public double CalculateEstimate()
         {
             // Check age first
@@ -52,45 +78,9 @@ namespace PG_Coding_Challenge
                 return 0;
             }
 
-            // Base annual cost
-            double cost = 100;
-
-            // Check and keep track of age every 5 yrs
-            int counter = 5, i = 0;
-            while(m_Age > 18 + counter)
-            {
-                i++;
-                counter += 5;
-            }
-
-            // Multiply # of occurrences of 5 yrs * $20 additional fee
-            double baseIncrease = i * 20;
-            cost += baseIncrease;
-         
-            // Cost increase percentage set to 0.
-            // This is in case the user has no underlying conditions
-            double costIncrease = 0.0;
-            // Set string to all caps to avoid case sensitivity
-            m_Condition = m_Condition.ToUpper();
-            m_Gender = m_Gender.ToUpper();
-          
-            // Health conditions specified here, used if statement
-            // for sake of time. Could have used switch also.
-            if (m_Condition == "ALLERGIES")
-            {
-                costIncrease = 1.01;
-                cost = cost * costIncrease;
-            } 
-            else if (m_Condition == "SLEEP APNEA")
-            {
-                costIncrease = 1.06;
-                cost = cost * costIncrease;
-            }
-            else if (m_Condition == "HEART DISEASE")
-            {
-                costIncrease = 1.17;
-                cost = cost * costIncrease;
-            }
+            CalculateAge();
+            CalculateCovg();
+            CalculateCondition();
             
             // Check gender last
             if (m_Gender == "FEMALE")
@@ -122,6 +112,17 @@ namespace PG_Coding_Challenge
         {
             get { return m_Condition; }
             set { m_Condition = value; }
+        }
+        public double CovgAmount
+        {
+            get { return covgAmount; }
+            set { covgAmount = value; }
+        }
+
+        public double Cost
+        {
+            get { return cost; }
+            set { cost = value; }
         }
     }
 }

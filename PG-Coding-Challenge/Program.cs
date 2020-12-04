@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PG_Coding_Challenge
 {
@@ -45,6 +46,12 @@ namespace PG_Coding_Challenge
                     Console.Write("Enter condition (enter 'none' if none): ");
                     string condition = Console.ReadLine();
                     c.Condition = condition;
+
+                    Console.Write("Enter coverage amount: ");
+                    string covgAmount = Console.ReadLine();
+
+                    double inputCovgAmount = Convert.ToDouble(covgAmount);
+                    c.CovgAmount = inputCovgAmount;
                 }
 
                 if (userChoice == 2)
